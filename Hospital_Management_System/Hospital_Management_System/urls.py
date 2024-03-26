@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from homepage import views as h 
 from Patients import views as p
 from Doctors import views as d
 from Administration import views as a
@@ -25,18 +26,18 @@ urlpatterns = [
     # path('appointment/', p.schedule_appointment),
     # path('history/', p.medical_history),
     # path('notifications/', p.notifications),
-    
-    path('',include('Patients.urls')),
+    path('',include('homepage.urls')),
+    path('Patients/',include('Patients.urls')),
 
 
     # path('viewAppointment/', d.view_appointment),
     # path('viewRecords/', d.access_records),
     # path('prescription/', d.prescription),
-    path('',include('Doctors.urls')),
+    path('Doctors/',include('Doctors.urls')),
     
     # path('management/', a.management),
     # path('reports/', a.reports),
-    path('',include('Administration.urls')),
+    path('Administration/',include('Administration.urls')),
 
 
 
