@@ -5,8 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @csrf_exempt
 def view_books(request):
-    if request.method == 'POST':
-        return redirect(add_books)
+    # if request.method == 'POST':
+    #     return redirect(add_books)
     return render(request, "view_books.html")
 
 @csrf_exempt
