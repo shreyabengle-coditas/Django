@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biodata</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+        th,tr,td{
+            border-bottom: 1px solid black;
+        }
+        .border-right{
+            border-right: 1px solid black;
+        }
+        .img-class {
+        height: 7rem;
+        width: 7rem;
+      }
+    </style>
+</head>
+<body>
+    <h1>Data</h1>
+
+    <table >
+        {% if data%}
+        <tr  >
+            <th class="border-right">Student First name &nbsp;</th>
+            <th>&nbsp;Student Last Name</th>
+            <th>&nbsp;Date of Birth</th>
+            <th>&nbsp;Profile Photo</th>
+            <th>&nbsp;Resume</th>
+            
+        </tr>
+        {% endif %}
+        {% for student in data %}
+        <tr>
+            <td class="border-right">{{student.f_name }}&nbsp;</td>
+            <td>&nbsp;{{student.l_name }}</td>
+            <td> {{student.dob}}</td>
+            <td><img src="{{student.image.url}}" alt="" class="img-class"></td>
+            <td><a href="{{student.resume.url}}">View Resume</a></td>
+        </tr>
+        {%endfor%}
+        
+       </table>
+        <a href="">Add Data</a>
+        
+    
+    </body>
+</body>
